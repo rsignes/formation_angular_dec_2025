@@ -1,4 +1,4 @@
-import { Component, input, InputSignal, signal, WritableSignal } from '@angular/core';
+import { Component, input, InputSignal, output, signal, WritableSignal } from '@angular/core';
 import {
   MatCard,
   MatCardHeader,
@@ -16,4 +16,5 @@ import { Pokemon } from '../../interfaces/pokemon';
 })
 export class PokemonCard {
   pokemon: InputSignal<Pokemon> = input.required();
+  selected = output<Pokemon>();
 }

@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { PokemonCard } from './components/pokemon-card/pokemon-card';
+import { Pokemon } from './interfaces/pokemon';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,9 @@ import { PokemonCard } from './components/pokemon-card/pokemon-card';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('formation_angular_dec_2025');
+  selectedPokemon?: Pokemon;
 
   pokemons = [
     {
@@ -26,4 +28,12 @@ export class App {
       size: 0.7,
     },
   ];
+
+  ngOnInit(): void {
+    this.selectedPokemon = this.pokemons[0];
+  }
+
+  handlePokemonSelected(pokemon: Pokemon) {
+    this.selectedPokemon = pokemon;
+  }
 }
