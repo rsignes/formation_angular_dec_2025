@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import {
   MatCard,
   MatCardHeader,
@@ -13,4 +13,10 @@ import {
   templateUrl: './pokemon-card.html',
   styleUrl: './pokemon-card.scss',
 })
-export class PokemonCard {}
+export class PokemonCard {
+  name = input('Pikachu');
+  type = input('Électrique');
+  image = input('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png');
+  weight = input(6);
+  size = input(0.4);
+}
