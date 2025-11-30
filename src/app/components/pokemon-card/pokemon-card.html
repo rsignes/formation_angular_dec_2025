@@ -1,11 +1,11 @@
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title>{{ name() }}</mat-card-title>
-    <mat-card-subtitle>Type : {{ type() }}</mat-card-subtitle>
+    <mat-card-title>{{ pokemon().name }}</mat-card-title>
+    <mat-card-subtitle>Type : {{ pokemon().type }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="image()" />
+  <img mat-card-image [src]="pokemon().image" />
   <mat-card-content>
-    <p>- Poids : {{ weight() }}kg</p>
-    <p>- Taille : {{ size() }}m</p>
+    <p>- Poids : {{ pokemon().weight }}kg</p>
+    <p>- Taille : {{ pokemon().size }}m</p>
   </mat-card-content>
 </mat-card>

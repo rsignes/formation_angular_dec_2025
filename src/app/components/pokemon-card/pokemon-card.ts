@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, InputSignal, signal, WritableSignal } from '@angular/core';
 import {
   MatCard,
   MatCardHeader,
@@ -6,6 +6,7 @@ import {
   MatCardSubtitle,
   MatCardContent,
 } from '@angular/material/card';
+import { Pokemon } from '../../interfaces/pokemon';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -14,9 +15,5 @@ import {
   styleUrl: './pokemon-card.scss',
 })
 export class PokemonCard {
-  name = input('Pikachu');
-  type = input('Électrique');
-  image = input('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png');
-  weight = input(6);
-  size = input(0.4);
+  pokemon: InputSignal<Pokemon> = input.required();
 }
