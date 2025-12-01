@@ -14,10 +14,8 @@ export class PokemonTypePipe implements PipeTransform {
       case 'Plante':
         emoji = '🌱';
         break;
-        break;
       case 'Feu':
         emoji = '🔥';
-        break;
         break;
       case 'Eau':
         emoji = '🌊';
