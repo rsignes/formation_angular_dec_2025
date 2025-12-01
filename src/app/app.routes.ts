@@ -11,8 +11,8 @@ export const routes: Routes = [
     path: 'pokemon/:name',
     component: PokemonDetails,
   },
-  // {
-  //   path: '**',
-  //   redirectTo: 'home',
-  // },
+  {
+    path: '**',
+    redirectTo: 'home',
+  },
 ];
