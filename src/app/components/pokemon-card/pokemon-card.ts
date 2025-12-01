@@ -8,10 +8,19 @@ import {
 } from '@angular/material/card';
 import { Pokemon } from '../../interfaces/pokemon';
 import { HoverBackground } from '../../directives/hover-background';
+import { PokemonTypePipe } from '../../pipes/pokemon-type-pipe';
 
 @Component({
   selector: 'app-pokemon-card',
-  imports: [MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardContent, HoverBackground],
+  imports: [
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatCardContent,
+    HoverBackground,
+    PokemonTypePipe,
+  ],
   templateUrl: './pokemon-card.html',
   styleUrl: './pokemon-card.scss',
 })
