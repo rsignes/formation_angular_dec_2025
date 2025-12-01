@@ -7,10 +7,11 @@ import {
   MatCardContent,
 } from '@angular/material/card';
 import { Pokemon } from '../../interfaces/pokemon';
+import { HoverBackground } from '../../directives/hover-background';
 
 @Component({
   selector: 'app-pokemon-card',
-  imports: [MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardContent],
+  imports: [MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardContent, HoverBackground],
   templateUrl: './pokemon-card.html',
   styleUrl: './pokemon-card.scss',
 })
