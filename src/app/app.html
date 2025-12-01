@@ -1,7 +1,1 @@
-@for (pokemon of pokemons; track $index) {
-<app-pokemon-card
-  [pokemon]="pokemon"
-  [class.selected]="pokemonService.selectedPokemon === pokemon"
-  (selected)="handlePokemonSelected($event)"
-></app-pokemon-card>
-}
+<router-outlet></router-outlet>
