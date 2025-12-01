@@ -11,6 +11,7 @@ import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import { MatError, MatFormField, MatInput, MatLabel } from '@angular/material/input';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +33,7 @@ import { MatError, MatFormField, MatInput, MatLabel } from '@angular/material/in
 })
 export class Login {
   private fb = inject(FormBuilder);
+  authService = inject(AuthService);
 
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -49,6 +51,7 @@ export class Login {
   onSubmit(): void {
     if (this.loginForm.valid) {
       console.log('Formulaire valide, données soumises :', this.loginForm.value);
+      this.authService.login(this.email?.value, this.password?.value).subscribe(console.log);
     } else {
       console.error('Le formulaire contient des erreurs.');
       this.loginForm.markAllAsTouched();
