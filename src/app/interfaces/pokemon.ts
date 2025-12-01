@@ -4,4 +4,5 @@ export interface Pokemon {
   image: string;
   weight: number;
   size: number;
+  description?: string;
 }
