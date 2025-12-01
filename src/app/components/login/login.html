@@ -1,0 +1,61 @@
+<img
+  src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+/>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Connexion</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="votre.email@exemple.com"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+
+        @if (email?.touched && email?.errors) {
+        <mat-error>
+          @if (email?.errors?.['required']) {
+          <span>L'email est obligatoire.</span>
+          } @if (email?.errors?.['email']) {
+          <span>Veuillez entrer un format d'email valide.</span>
+          }
+        </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mot de Passe</mat-label>
+        <input matInput formControlName="password" type="password" />
+        <mat-icon matSuffix>vpn_key</mat-icon>
+
+        @if (password?.touched && password?.errors) {
+        <mat-error>
+          @if (password?.errors?.['required']) {
+          <span>Le mot de passe est obligatoire.</span>
+          } @if (password?.errors?.['passwordStrength']) {
+          <span>
+            Le mot de passe doit contenir 4+ caractères, majuscules, minuscules et chiffres.
+          </span>
+          }
+        </mat-error>
+        }
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="full-width mt-16"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
