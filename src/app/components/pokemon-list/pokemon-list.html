@@ -1,4 +1,9 @@
-@for (pokemon of pokemons$ | async | sortByName:'asc'; track $index) {
+@if (pokemons$ | async) {
+<div>
+  <label for="order-checkbox">Trier par ordre alphabétique ascendant</label>
+  <input id="order-checkbox" type="checkbox" [(ngModel)]="isOrderAsc" />
+</div>
+} @for (pokemon of pokemons$ | async | sortByName:isOrderAsc; track $index) {
 <app-pokemon-card
   [pokemon]="pokemon"
   [class.selected]="pokemonService.selectedPokemon === pokemon"

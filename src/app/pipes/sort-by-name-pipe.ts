@@ -5,11 +5,9 @@ import { Pokemon } from '../interfaces/pokemon';
   name: 'sortByName',
 })
 export class SortByNamePipe implements PipeTransform {
-  transform(pokemons: Pokemon[] | null, direction: 'asc' | 'des' = 'asc'): Pokemon[] {
+  transform(pokemons: Pokemon[] | null, asc = true): Pokemon[] {
     return pokemons && pokemons.length
-      ? pokemons.sort((a, b) =>
-          direction === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
-        )
+      ? pokemons.sort((a, b) => (asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)))
       : [];
   }
 }
