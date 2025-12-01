@@ -1,4 +1,4 @@
-@for (pokemon of pokemons; track $index) {
+@for (pokemon of pokemons | sortByName:'asc'; track $index) {
 <app-pokemon-card
   [pokemon]="pokemon"
   [class.selected]="pokemonService.selectedPokemon === pokemon"

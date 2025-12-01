@@ -3,10 +3,11 @@ import { PokemonService } from '../../services/pokemon-service';
 import { Pokemon } from '../../interfaces/pokemon';
 import { PokemonCard } from '../pokemon-card/pokemon-card';
 import { RouterLink } from '@angular/router';
+import { SortByNamePipe } from '../../pipes/sort-by-name-pipe';
 
 @Component({
   selector: 'app-pokemon-list',
-  imports: [PokemonCard, RouterLink],
+  imports: [PokemonCard, RouterLink, SortByNamePipe],
   templateUrl: './pokemon-list.html',
   styleUrl: './pokemon-list.scss',
 })
